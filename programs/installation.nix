@@ -13,8 +13,6 @@
      audacity
      bitwarden-desktop
      gearlever
-     #vivaldi
-     #vivaldi-ffmpeg-codecs
      prismlauncher
      mullvad-vpn
      davinci-resolve-studio
@@ -27,5 +25,21 @@
      gnucash
      rclone
      flameshot
+     streamcontroller
+     qbittorrent
   ];
+  # Enable your installed stuff here
+  services.mullvad-vpn.enable = true;
+  programs.steam.enable = true;
+  
+  # Write Chromium rules
+  programs.chromium = {
+    enable = true;
+  # Automatically Install Extensions on all Chromium Browsers
+    extensions = [
+      "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
+      "cfhdojbkjhnklbpkdaibdccddilifddb" # Adblock Plus
+      "gphhapmejobijbbhgpjhcjognlahblep" # GNOME Shell Integration
+    ];
+   };
 }

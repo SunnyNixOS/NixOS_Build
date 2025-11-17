@@ -12,6 +12,9 @@ in {
     [
       ./hardware-configuration.nix
       ./programs/installation.nix
+      ./programs/flatpaks.nix
+      ./system/gpu.nix
+      ./system/filesystems.nix
     ];
 
   # Bootloader.
@@ -53,78 +56,12 @@ in {
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   
-  # Enable Flatpaks
-  services.flatpak.enable = true;
-
-  services.flatpak.update.auto.enable = false;
-  services.flatpak.uninstallUnmanaged = false;
-  
-  services.flatpak.packages = [
-    "com.github.iwalton3.jellyfin-media-player"
-    "org.vinegarhq.Sober"
-  ];
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
     variant = "";
   };
   
-  # Configure File Systems
-  fileSystems."${myHome}/Documents/2tb_drive" = {
-    device = "/dev/disk/by-uuid/2b48454f-c7db-4ace-97df-a24f30038aaf";
-    fsType = "ext4";
-    options = [
-       "defaults"
-       "nofail"
-    ];
-  };
-
-  # Optional: ensure mount point exists if parent directories might not exist
-  systemd.tmpfiles.rules = [
-    "d ${myHome}/Documents/2tb_drive 0755 ${myUser} ${myUser} -"
-  ];
-
-  # Nvidia Proprietary Drivers
-   # Enable OpenGL
-  hardware.graphics = {
-    enable = true;
-  };
-
-  # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["nvidia"];
-
-  hardware.nvidia = {
-
-    # Modesetting is required.
-    modesetting.enable = true;
-
-    # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
-    # Enable this if you have graphical corruption issues or application crashes after waking
-    # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead 
-    # of just the bare essentials.
-    powerManagement.enable = false;
-
-    # Fine-grained power management. Turns off GPU when not in use.
-    # Experimental and only works on modern Nvidia GPUs (Turing or newer).
-    powerManagement.finegrained = false;
-
-    # Use the NVidia open source kernel module (not to be confused with the
-    # independent third-party "nouveau" open source driver).
-    # Support is limited to the Turing and later architectures. Full list of 
-    # supported GPUs is at: 
-    # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
-    # Only available from driver 515.43.04+
-    open = true;
-
-    # Enable the Nvidia settings menu,
-	# accessible via `nvidia-settings`.
-    nvidiaSettings = true;
-
-    # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -157,39 +94,11 @@ in {
     ];
   };
 
-  # Install firefox.
-  programs.firefox.enable = false;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # Enable Experimental NixOS Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];  
-
-  # Write Chromium rules
-  programs.chromium = {
-    enable = true;
-
-  # Automatically Install Extensions
-    extensions = [
-      "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
-      "cfhdojbkjhnklbpkdaibdccddilifddb" # Adblock Plus
-      "gphhapmejobijbbhgpjhcjognlahblep" # GNOME Shell Integration
-      
-    ];
-   };
-  # Enable Mullvad
-  services.mullvad-vpn.enable = true;
-  programs.steam.enable = true;
-
-
-  environment.variables = {
-  # Where the shader cache will live
-  __GL_SHADER_DISK_CACHE_PATH = "${myHome}/.nv/GLCache";
-
-  # Shader cache size limit (20 GB)
-  __GL_SHADER_DISK_CACHE_SIZE = "21474836480";
-  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
