@@ -11,6 +11,7 @@ in {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./install_apps.nix
     ];
 
   # Bootloader.
@@ -181,35 +182,6 @@ in {
   services.mullvad-vpn.enable = true;
   programs.steam.enable = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-     git
-     vesktop
-     steam
-     xivlauncher
-     obsidian
-     vscode
-     obs-studio
-     audacity
-     bitwarden-desktop
-     gearlever
-     #vivaldi
-     #vivaldi-ffmpeg-codecs
-     prismlauncher
-     mullvad-vpn
-     davinci-resolve-studio
-     gimp3
-     dconf-editor
-     anki
-     gnome-tweaks
-     whitesur-gtk-theme
-     brave
-     gnucash
-     rclone
-  ];
 
   environment.variables = {
   # Where the shader cache will live
