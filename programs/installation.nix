@@ -26,6 +26,6 @@
      brave
      gnucash
      rclone
-     firefox
+     flameshot
   ];
 }

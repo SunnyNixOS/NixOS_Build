@@ -79,7 +79,30 @@
          "autohide-dash"=true;
          "open-app-animation"=true;
          "running-indicator-style"=1;
+      
      };
-    };
+   
+   # Disable default GNOME screenshot keybindings
+   "org/gnome/shell/keybindings" = {
+     show-screenshot-ui = [];
+     screenshot = [];
+     };
+   
+   
+  # Establish that a custom keybind exists
+  "org/gnome/settings-daemon/plugins/media-keys" = {
+    custom-keybindings = [
+      "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+    ];
   };
+
+  # Define the custom keybind we just established (using it for flameshot screenshot tool)
+  "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+    name = "flameshot";
+    command = "flameshot gui";
+    binding = "Print";
+  };
+};
+};
+
 }  
