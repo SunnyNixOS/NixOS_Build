@@ -1,5 +1,8 @@
 { config, pkgs, lib, ... }:  
 # This module is imported into home-manager
+let
+  flameshotPath = "${pkgs.flameshot}/bin/flameshot";
+in
 {   
   # Installs GNOME Extensions
   home.packages = with pkgs; [
@@ -99,7 +102,7 @@
   # Define the custom keybind we just established (using it for flameshot screenshot tool)
   "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
     name = "flameshot";
-    command = "flameshot gui";
+    command = "${flameshotPath} gui";
     binding = "Print";
   };
 };
