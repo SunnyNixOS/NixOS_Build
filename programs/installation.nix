@@ -1,11 +1,8 @@
 { config, lib, pkgs, ... }:
-
+# This module is imported into configuration.nix main file
 {
-# List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # Look up the NixOS Package Search Repository to add packages down below to add them on the system
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
      git
      vesktop
      steam

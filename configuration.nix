@@ -9,9 +9,9 @@ let
   myHome = "/home/${myUser}";
 in {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
-      ./Programs/Program_Installation.nix
+      ./programs/installation.nix
     ];
 
   # Bootloader.
