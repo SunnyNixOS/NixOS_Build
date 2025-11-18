@@ -26,6 +26,7 @@
      flameshot
      streamcontroller
      qbittorrent
+     brave
   ];
   # Enable your installed stuff here
   services.mullvad-vpn.enable = true;

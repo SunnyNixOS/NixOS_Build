@@ -15,7 +15,6 @@
     "com.github.iwalton3.jellyfin-media-player"
     "org.vinegarhq.Sober"
     "com.parsecgaming.parsec"
-    "com.brave.Browser"
   ];
   
 }  
