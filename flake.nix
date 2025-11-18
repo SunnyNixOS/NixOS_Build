@@ -55,6 +55,7 @@
       jaime = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ ./home/default_gnome/home.nix ];
+        extraSpecialArgs = { flakeRoot = flakeRoot; };
       };
     };  
   };

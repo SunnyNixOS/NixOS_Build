@@ -1,11 +1,11 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, flakeRoot, ... }:
 
 {
 
   imports =
     [ 
-      ./programs/configurations.nix
-      ./customizations/gnome.nix
+      "${flakeRoot}/programs/configurations.nix"
+      ./gnome.nix
     ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
