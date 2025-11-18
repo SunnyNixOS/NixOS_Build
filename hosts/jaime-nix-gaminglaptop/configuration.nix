@@ -54,13 +54,18 @@ in {
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm = {
     enable = true;
+<<<<<<< HEAD
     wayland = false;
+=======
+    wayland = true;
+>>>>>>> e842e4b (changes from laptop)
   };
   
   services.xserver.desktopManager.gnome.enable = true;
 
   # Blacklists nouveau
   boot.blacklistedKernelModules = [ "nouveau" ];
+<<<<<<< HEAD
   # Blacklist Wayland
   services.xserver.displayManager.gdm.wayland = false;
 
@@ -74,6 +79,8 @@ in {
 
     EndSection
     '';
+=======
+>>>>>>> e842e4b (changes from laptop)
   
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -115,6 +122,10 @@ in {
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+<<<<<<< HEAD
+=======
+  nixpkgs.config.nvidia.acceptLicense = true;
+>>>>>>> e842e4b (changes from laptop)
 
   # Enable Experimental NixOS Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];  
@@ -146,4 +157,8 @@ in {
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> e842e4b (changes from laptop)

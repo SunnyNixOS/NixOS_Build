@@ -53,4 +53,8 @@ in {
     __GL_SHADER_DISK_CACHE_SIZE = "21474836480";
   };
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> e842e4b (changes from laptop)
