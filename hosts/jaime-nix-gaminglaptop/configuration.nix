@@ -52,8 +52,28 @@ in {
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.displayManager.gdm = {
+    enable = true;
+    wayland = false;
+  };
+  
   services.xserver.desktopManager.gnome.enable = true;
+
+  # Blacklists nouveau
+  boot.blacklistedKernelModules = [ "nouveau" ];
+  # Blacklist Wayland
+  services.xserver.displayManager.gdm.wayland = false;
+
+  services.xserver.config = ''
+    Section "Device"
+      Identifier "Nvidia Card"
+      Driver "nvidia"
+      Option "AllowEmptyInitialConfiguration"
+      Option "PrimaryGPU" "yes"
+      Option "ModeValidation" "NoTotalSizeCheck"
+
+    EndSection
+    '';
   
   # Configure keymap in X11
   services.xserver.xkb = {
