@@ -52,11 +52,16 @@
     };
 
     homeConfigurations = {
-      jaime = home-manager.lib.homeManagerConfiguration {
+      jaime-nix-gamingdesktop = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home/default_gnome/home.nix ];
+        modules = [ ./home/default_gnome/home_x11.nix ];
         extraSpecialArgs = { flakeRoot = flakeRoot; };
       };
+
+      jaime-nix-gaminglaptop = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ./home/default_gnome/home_wayland.nix ];
+        extraSpecialArgs = { flakeRoot = flakeRoot; };
     };  
   };
 

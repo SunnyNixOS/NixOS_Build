@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:  
-# This module is imported into home-manager
+# This module is imported into home-manager for jaime-desktop
 let
-  flameshotPath = "${pkgs.flameshot}/bin/flameshot";
+  flameshotPath = "${pkgs.flameshot}/bin/flameshot"; # not used in this file(?)
 in
 {   
   # Installs GNOME Extensions
@@ -75,6 +75,7 @@ in
        "org/gnome/desktop/interface" = {
            show-battery-percentage = true;
            clock-format = "12h";
+           color-scheme = "prefer-dark";
   };
       
       # GNOME Extensions Settings
@@ -102,7 +103,7 @@ in
   # Define the custom keybind we just established (using it for flameshot screenshot tool)
   "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
     name = "flameshot";
-    command = "${flameshotPath} gui";
+    command = "script --command "QT_QPA_PLATFORM=wayland flameshot gui" /dev/null";
     binding = "Print";
   };
 };
