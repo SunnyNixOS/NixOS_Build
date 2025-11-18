@@ -21,7 +21,6 @@
      anki
      gnome-tweaks
      whitesur-gtk-theme
-     brave
      gnucash
      rclone
      flameshot
