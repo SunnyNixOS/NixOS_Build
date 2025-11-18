@@ -1,0 +1,456 @@
+{
+    "keys": {
+        "0x2": {
+            "states": {
+                "0": {
+                    "media": {
+                        "path": "/home/jaime/.var/app/com.core447.StreamController/data/Assets/AssetManager/Assets/return.png"
+                    },
+                    "actions": [
+                        {
+                            "id": "com_swordmaiden_xivdeck::Command",
+                            "settings": {
+                                "command": "/return"
+                            }
+                        }
+                    ],
+                    "image-control-action": 0,
+                    "label-control-actions": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "background-control-action": 0,
+                    "labels": {
+                        "bottom": {
+                            "text": ""
+                        },
+                        "top": {
+                            "text": ""
+                        }
+                    }
+                }
+            }
+        },
+        "3x2": {
+            "states": {
+                "0": {
+                    "media": {
+                        "path": "/home/jaime/.var/app/com.core447.StreamController/data/Assets/AssetManager/Assets/arrow_left.png"
+                    },
+                    "actions": [
+                        {
+                            "id": "com_core447_DeckPlugin::ChangePage",
+                            "settings": {
+                                "selected_page": "/home/jaime/.var/app/com.core447.StreamController/data/pages/xiv_general_1.json",
+                                "deck_number": "A00SA4282NEGIQ"
+                            }
+                        }
+                    ],
+                    "image-control-action": 0,
+                    "label-control-actions": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "background-control-action": 0
+                }
+            }
+        },
+        "4x2": {
+            "states": {
+                "0": {
+                    "actions": [
+                        {
+                            "id": "com_core447_DeckPlugin::ChangePage",
+                            "settings": {
+                                "selected_page": "/home/jaime/.var/app/com.core447.StreamController/data/pages/xiv_general_2.json",
+                                "deck_number": "A00SA4282NEGIQ"
+                            }
+                        }
+                    ],
+                    "image-control-action": 0,
+                    "label-control-actions": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "background-control-action": 0,
+                    "media": {
+                        "path": "/home/jaime/.var/app/com.core447.StreamController/data/Assets/AssetManager/Assets/folder_icon.png"
+                    }
+                }
+            }
+        },
+        "0x1": {
+            "states": {
+                "0": {
+                    "media": {
+                        "path": "/home/jaime/.var/app/com.core447.StreamController/data/Assets/AssetManager/Assets/craftinglog.png"
+                    },
+                    "actions": [
+                        {
+                            "id": "com_swordmaiden_xivdeck::Command",
+                            "settings": {
+                                "command": "/craftinglog"
+                            }
+                        }
+                    ],
+                    "image-control-action": 0,
+                    "label-control-actions": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "background-control-action": 0,
+                    "labels": {
+                        "bottom": {
+                            "text": ""
+                        },
+                        "top": {
+                            "text": ""
+                        }
+                    }
+                }
+            }
+        },
+        "1x1": {
+            "states": {
+                "0": {
+                    "media": {
+                        "path": "/home/jaime/.var/app/com.core447.StreamController/data/Assets/AssetManager/Assets/gatheringlog.png"
+                    },
+                    "actions": [
+                        {
+                            "id": "com_swordmaiden_xivdeck::Command",
+                            "settings": {
+                                "command": "/gatheringlog"
+                            }
+                        }
+                    ],
+                    "image-control-action": 0,
+                    "label-control-actions": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "background-control-action": 0,
+                    "labels": {
+                        "bottom": {
+                            "text": ""
+                        },
+                        "top": {
+                            "text": ""
+                        }
+                    }
+                }
+            }
+        },
+        "1x0": {
+            "states": {
+                "0": {
+                    "actions": [
+                        {
+                            "id": "com_swordmaiden_xivdeck::Command",
+                            "settings": {
+                                "command": "/inventory"
+                            }
+                        }
+                    ],
+                    "image-control-action": 0,
+                    "label-control-actions": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "background-control-action": 0,
+                    "media": {
+                        "path": "/home/jaime/.var/app/com.core447.StreamController/data/Assets/AssetManager/Assets/inventory.png"
+                    },
+                    "labels": {
+                        "top": {
+                            "text": ""
+                        },
+                        "bottom": {
+                            "text": ""
+                        }
+                    }
+                }
+            }
+        },
+        "4x1": {
+            "states": {
+                "0": {
+                    "media": {
+                        "path": "/home/jaime/.var/app/com.core447.StreamController/data/Assets/AssetManager/Assets/currency.png"
+                    },
+                    "actions": [
+                        {
+                            "id": "com_swordmaiden_xivdeck::Command",
+                            "settings": {
+                                "command": "/currency"
+                            }
+                        }
+                    ],
+                    "image-control-action": 0,
+                    "label-control-actions": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "background-control-action": 0,
+                    "labels": {
+                        "bottom": {
+                            "text": ""
+                        },
+                        "top": {
+                            "text": ""
+                        }
+                    }
+                }
+            }
+        },
+        "1x2": {
+            "states": {
+                "0": {
+                    "media": {
+                        "path": "/home/jaime/.var/app/com.core447.StreamController/data/Assets/AssetManager/Assets/teamcraft.png"
+                    },
+                    "actions": [
+                        {
+                            "id": "com_core447_OSPlugin::OpenInBrowser",
+                            "settings": {
+                                "url": "https://ffxivteamcraft.com/",
+                                "new_window": false
+                            }
+                        }
+                    ],
+                    "image-control-action": 0,
+                    "label-control-actions": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "background-control-action": 0
+                }
+            }
+        },
+        "2x2": {
+            "states": {
+                "0": {
+                    "media": {
+                        "path": "/home/jaime/.var/app/com.core447.StreamController/data/Assets/AssetManager/Assets/universalis.png"
+                    },
+                    "actions": [
+                        {
+                            "id": "com_core447_OSPlugin::OpenInBrowser",
+                            "settings": {
+                                "url": "https://universalis.app/",
+                                "new_window": false
+                            }
+                        }
+                    ],
+                    "image-control-action": 0,
+                    "label-control-actions": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "background-control-action": 0
+                }
+            }
+        },
+        "3x0": {
+            "states": {
+                "0": {
+                    "media": {
+                        "path": "/home/jaime/.var/app/com.core447.StreamController/data/Assets/AssetManager/Assets/mastervolume.png"
+                    },
+                    "actions": [
+                        {
+                            "id": "com_swordmaiden_xivdeck::Command",
+                            "settings": {
+                                "command": "/mastervolume 0"
+                            }
+                        }
+                    ],
+                    "image-control-action": 0,
+                    "label-control-actions": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "background-control-action": 0,
+                    "labels": {
+                        "bottom": {
+                            "text": "0"
+                        },
+                        "top": {
+                            "text": ""
+                        }
+                    }
+                }
+            }
+        },
+        "4x0": {
+            "states": {
+                "0": {
+                    "media": {
+                        "path": "/home/jaime/.var/app/com.core447.StreamController/data/Assets/AssetManager/Assets/mastervolume.png"
+                    },
+                    "actions": [
+                        {
+                            "id": "com_swordmaiden_xivdeck::Command",
+                            "settings": {
+                                "command": "/mastervolume 100"
+                            }
+                        }
+                    ],
+                    "image-control-action": 0,
+                    "label-control-actions": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "background-control-action": 0,
+                    "labels": {
+                        "bottom": {
+                            "text": "100"
+                        },
+                        "top": {
+                            "text": ""
+                        }
+                    }
+                }
+            }
+        },
+        "2x1": {
+            "states": {
+                "0": {
+                    "media": {
+                        "path": "/home/jaime/.var/app/com.core447.StreamController/data/Assets/AssetManager/Assets/housing.png"
+                    },
+                    "actions": [
+                        {
+                            "id": "com_swordmaiden_xivdeck::Command",
+                            "settings": {
+                                "command": "/housing"
+                            }
+                        }
+                    ],
+                    "image-control-action": 0,
+                    "label-control-actions": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "background-control-action": 0,
+                    "labels": {
+                        "bottom": {
+                            "text": ""
+                        },
+                        "top": {
+                            "text": ""
+                        }
+                    }
+                }
+            }
+        },
+        "3x1": {
+            "states": {
+                "0": {
+                    "media": {
+                        "path": "/home/jaime/.var/app/com.core447.StreamController/data/Assets/AssetManager/Assets/hunting_log.png"
+                    },
+                    "actions": [
+                        {
+                            "id": "com_swordmaiden_xivdeck::Command",
+                            "settings": {
+                                "command": "/huntinglog"
+                            }
+                        }
+                    ],
+                    "image-control-action": 0,
+                    "label-control-actions": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "background-control-action": 0,
+                    "labels": {
+                        "bottom": {
+                            "text": ""
+                        },
+                        "top": {
+                            "text": ""
+                        }
+                    }
+                }
+            }
+        },
+        "2x0": {
+            "states": {
+                "0": {
+                    "media": {
+                        "path": "/home/jaime/.var/app/com.core447.StreamController/data/Assets/AssetManager/Assets/minionguide.png"
+                    },
+                    "actions": [
+                        {
+                            "id": "com_swordmaiden_xivdeck::Command",
+                            "settings": {
+                                "command": "/minionguide"
+                            }
+                        }
+                    ],
+                    "image-control-action": 0,
+                    "label-control-actions": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "background-control-action": 0,
+                    "labels": {
+                        "bottom": {
+                            "text": ""
+                        },
+                        "top": {
+                            "text": ""
+                        }
+                    }
+                }
+            }
+        },
+        "0x0": {
+            "states": {
+                "0": {
+                    "media": {
+                        "path": "/home/jaime/.var/app/com.core447.StreamController/data/Assets/AssetManager/Assets/mountguide.png"
+                    },
+                    "actions": [
+                        {
+                            "id": "com_swordmaiden_xivdeck::Command",
+                            "settings": {
+                                "command": "/mountguide"
+                            }
+                        }
+                    ],
+                    "image-control-action": 0,
+                    "label-control-actions": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "background-control-action": 0,
+                    "labels": {
+                        "top": {
+                            "text": ""
+                        },
+                        "bottom": {
+                            "text": ""
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
