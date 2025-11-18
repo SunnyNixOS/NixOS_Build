@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, flakeRoot, ... }:
 
 let
   myUser = "jaime";
@@ -11,17 +11,17 @@ in {
   imports =
     [
       ./hardware-configuration.nix
-      ./programs/installation.nix
-      ./programs/flatpaks.nix
-      ./system/gpu.nix
-      ./system/filesystems.nix
+      ./gpu.nix
+      ./filesystems.nix
+      "${flakeRoot}/programs/installation.nix"
+      "${flakeRoot}/programs/flatpaks.nix"
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos-gamingpc"; # Define your hostname.
+  networking.hostName = "jaime-nix-gamingdesktop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary

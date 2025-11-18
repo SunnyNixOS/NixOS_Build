@@ -21,22 +21,40 @@
       lib = nixpkgs.lib;
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      flakeRoot = self;
     in {
+
+      
     nixosConfigurations = {
-      nixos-gamingpc = lib.nixosSystem {
+      jaime-nix-gamingdesktop = lib.nixosSystem {
         inherit system;
         modules = [ 
-        ./configuration.nix 
+        ./hosts/jaime-nix-gamingdesktop/configuration.nix 
         # Declarative flatpaks
         nix-flatpak.nixosModules.nix-flatpak
         
         ];
+        # Flake root to help configurations
+        specialArgs = { flakeRoot = flakeRoot; };
+      };
+
+      jaime-nix-gaminglaptop = lib.nixosSystem {
+        inherit system;
+        modules = [ 
+        ./hosts/jaime-nix-gaminglaptop/configuration.nix 
+        # Declarative flatpaks
+        nix-flatpak.nixosModules.nix-flatpak  
+        ];
+
+        #Flake root to help configs
+        specialArgs = { flakeRoot = flakeRoot; };
       };
     };
+
     homeConfigurations = {
       jaime = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home.nix ];
+        modules = [ ./home/default_gnome/home.nix ];
       };
     };  
   };

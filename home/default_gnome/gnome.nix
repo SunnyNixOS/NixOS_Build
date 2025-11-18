@@ -52,7 +52,7 @@ in
         
         # These are the icons that appear in your dock in the dash2dock extension
        favorite-apps = [
-         "vivaldi-stable.desktop"
+         "brave-browser.desktop"
          "obsidian.desktop"
          "bitwarden.desktop"
          "org.gnome.Console.desktop"
