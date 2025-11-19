@@ -27,6 +27,7 @@
      streamcontroller
      qbittorrent
      brave
+     protonup-qt
   ];
   # Enable your installed stuff here
   services.mullvad-vpn.enable = true;
