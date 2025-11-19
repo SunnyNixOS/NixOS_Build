@@ -28,6 +28,7 @@
      qbittorrent
      brave
      protonup-qt
+     lutris
   ];
   # Enable your installed stuff here
   services.mullvad-vpn.enable = true;
