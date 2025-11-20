@@ -105,7 +105,7 @@ in
   # Define the custom keybind we just established (using it for flameshot screenshot tool)
   "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
     name = "flameshot";
-   # command = "script --command "QT_QPA_PLATFORM=wayland flameshot gui" /dev/null";
+    command = ''script --command "QT_QPA_PLATFORM=wayland flameshot gui" /dev/null'';
     binding = "Print";
   };
 };
