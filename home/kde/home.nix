@@ -5,7 +5,7 @@
   imports =
     [ 
       "${flakeRoot}/programs/configurations.nix"
-      ./gnome.nix
+      ./kde.nix
     ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.

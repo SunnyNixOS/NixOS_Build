@@ -7,6 +7,11 @@
 let
   myUser = "jaime";
   myHome = "/home/${myUser}";
+  deModule =
+    if de == "gnome" then flakeRoot + "/de/gnomede.nix"
+    else if de == "kde" then flakeRoot + "/de/kdede.nix"
+    else if de == "hyprland" then flakeRoot + "/de/hyprland.nix"
+    else throw "Unknown Desktop Environment: ${de}";
 in {
   imports =
     [
@@ -15,9 +20,7 @@ in {
       ./filesystems.nix
       "${flakeRoot}/programs/installation.nix"
       "${flakeRoot}/programs/flatpaks.nix"
-      (if de == "gnome" then "${flakeRoot}/de/gnomede.nix" else null)
-      (if de == "kde" then "${flakeRoot}/de/kdede.nix" else null)
-      (if de == "hyprland" then "${flakeRoot}/de/hyprland.nix" else null)
+      deModule
     ];
 
   # Bootloader.
