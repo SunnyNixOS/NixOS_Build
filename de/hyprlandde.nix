@@ -7,10 +7,6 @@
     withUWSM = true; # recommended for most users
     xwayland.enable = true; # Xwayland can be disabled.
 
-    # Add extra configuration for keybinds
-    extraConfig = ''
-      bind = SUPER, SPACE, exec, wofi --show drun
-      '';
   };
   services = {
     displayManager.sddm.enable = true;
@@ -22,11 +18,13 @@ environment.systemPackages = with pkgs;
   [
     # Kitty required for Hyprland
     kitty
-    wofi
-    waybar
-    hyprpaper
-    wl-clipboard
+    nemo
+    rofi-wayland
     grim
     slurp
+    wl-clipboard
+    playerctl
+    brightnessctl
+    jq
   ];
   }

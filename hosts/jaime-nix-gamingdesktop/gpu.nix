@@ -8,6 +8,7 @@ in {
    # Enable OpenGL
   hardware.graphics = {
     enable = true;
+    enable32Bit = true;
   };
 
   # Load nvidia driver for Xorg and Wayland
@@ -34,7 +35,7 @@ in {
     # supported GPUs is at: 
     # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
     # Only available from driver 515.43.04+
-    open = true;
+    open = false;
 
     # Enable the Nvidia settings menu,
 	# accessible via `nvidia-settings`.
@@ -52,5 +53,14 @@ in {
     # Shader cache size limit (20 GB)
     __GL_SHADER_DISK_CACHE_SIZE = "21474836480";
   };
+
+  # Fixing Gamescope?
+  environment.sessionVariables = {
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    LIBVA_DRIVER_NAME = "nvidia";
+    __GL_VRR_ALLOWED = "0";
+    WLR_NO_HARDWARE_CURSORS = "1";
+    __GL_WAYLAND_DISABLE_INTEROP = "0";
+};
 
 }

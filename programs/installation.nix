@@ -29,11 +29,19 @@
      brave
      protonup-qt
      lutris
+     r2modman
+     mangohud
+     vulkan-tools
   ];
   # Enable your installed stuff here
   services.mullvad-vpn.enable = true;
   programs.steam.enable = true;
   
+  programs.gamescope = {
+    enable = true;
+    capSysNice = true;
+
+  };
   # Write Chromium rules
   programs.chromium = {
     enable = true;
