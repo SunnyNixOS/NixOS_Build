@@ -58,7 +58,15 @@ wayland.windowManager.hyprland = {
     "$mainMod, mouse:272, movewindow"
     # optionally:
     "$mainMod, mouse:273, resizewindow"
-  ];
+    ];
+    bindle = [
+      ", XF86AudioRaiseVolume, exec, vol --up"
+      ", XF86AudioLowerVolume, exec, vol --down"
+    ];
+
+    bindl = [
+      ", XF86AudioPlay, exec, playerctl play-pause" # the stupid key is called play , but it toggles
+    ];
           # Mouse bindings for moving/resizing windows
   };
 };

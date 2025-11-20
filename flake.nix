@@ -11,7 +11,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.6.0";
-    nvf.url = "github:notashelf/nvf";
+    nix4nvchad = {
+      url = "github:nix-community/nix4nvchad";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   
   
@@ -74,7 +77,7 @@
       hyprland = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ 
-          nvf.homeManagerModules.default
+          inputs.nix4nvchad.homeManagerModules.nvchad
           ./home/hyprland/home.nix
           ];
 
