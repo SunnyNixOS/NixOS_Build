@@ -17,5 +17,11 @@ environment.systemPackages = with pkgs;
   [
     # Kitty required for Hyprland
     kitty
+    wofi
+    waybar
+    hyprpaper
+    wl-clipboard
+    grim
+    slurp
   ];
   }

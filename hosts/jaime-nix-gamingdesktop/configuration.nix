@@ -10,7 +10,7 @@ let
   deModule =
     if de == "gnome" then flakeRoot + "/de/gnomede.nix"
     else if de == "kde" then flakeRoot + "/de/kdede.nix"
-    else if de == "hyprland" then flakeRoot + "/de/hyprland.nix"
+    else if de == "hyprland" then flakeRoot + "/de/hyprlandde.nix"
     else throw "Unknown Desktop Environment: ${de}";
 in {
   imports =

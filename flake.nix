@@ -22,7 +22,7 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       flakeRoot = self;
-      de = "kde"; # change DE here to gnome, kde, hyprland
+      de = "gnome"; # change DE here to gnome, kde, hyprland
     in {
 
       
