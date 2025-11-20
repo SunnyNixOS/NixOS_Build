@@ -6,6 +6,11 @@
     enable = true;
     withUWSM = true; # recommended for most users
     xwayland.enable = true; # Xwayland can be disabled.
+
+    # Add extra configuration for keybinds
+    extraConfig = ''
+      bind = SUPER, SPACE, exec, wofi --show drun
+      '';
   };
   services = {
     displayManager.sddm.enable = true;
