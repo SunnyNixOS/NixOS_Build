@@ -32,6 +32,7 @@
      r2modman
      mangohud
      vulkan-tools
+     neovim
   ];
   # Enable your installed stuff here
   services.mullvad-vpn.enable = true;

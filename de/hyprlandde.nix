@@ -1,6 +1,9 @@
   { config, pkgs, ... }:
   {
 
+  xdg.portal = {
+    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+  };
 
   programs.hyprland = {
     enable = true;
@@ -26,5 +29,11 @@ environment.systemPackages = with pkgs;
     playerctl
     brightnessctl
     jq
+    waybar
+    nwg-displays
+    nautilus
+    hyprshot
+    swaynotificationcenter
+    satty
   ];
   }
