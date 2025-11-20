@@ -20,19 +20,17 @@
 environment.systemPackages = with pkgs;
   [
     kitty
-    nemo
     rofi-wayland
-    grim
-    slurp
     wl-clipboard
     playerctl
     brightnessctl
     jq
     waybar
     nwg-displays
-    nautilus
     hyprshot
+    nautilus
     swaynotificationcenter
     satty
+    yazi
   ];
   }
