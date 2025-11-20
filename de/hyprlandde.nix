@@ -19,7 +19,6 @@
 
 environment.systemPackages = with pkgs;
   [
-    # Kitty required for Hyprland
     kitty
     nemo
     rofi-wayland

@@ -42,6 +42,7 @@ wayland.windowManager.hyprland = {
       "$mainMod, E, exec, $filemanager"          # Open file manager
       "SHIFT, PRINT, exec, bash -c 'hyprshot -m region --raw | satty --filename - --fullscreen'"        # Take a screenshot of a window interactively
       ", PRINT, exec, hyprshot -m region -o clipboard"     # Take a normal screenshot (no editing)
+      "$mainMod, PRINT, exec, hyprshot -m window -o clipboard" # Take a screenshot of active window
 
       ### Vim Bindings for Window Switching ###
       "$mainMod, h, movefocus, l"
