@@ -20,7 +20,7 @@
   
   
   
-  outputs = { self, nixpkgs, home-manager, nix-flatpak, nvf, ... }:
+  outputs = { self, nixpkgs, home-manager, nix-flatpak, nix4nvchad, ... }:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -77,12 +77,14 @@
       hyprland = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ 
-          inputs.nix4nvchad.homeManagerModules.nvchad
+          nix4nvchad.homeManagerModules.nvchad
           ./home/hyprland/home.nix
           ];
 
           
-        extraSpecialArgs = { flakeRoot = flakeRoot; };
+        extraSpecialArgs = { 
+          flakeRoot = flakeRoot;
+          };
     }; 
   };
     };

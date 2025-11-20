@@ -1,39 +1,20 @@
 {
   "nodes": {
-    "flake-compat": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1751685974,
-        "narHash": "sha256-NKw96t+BgHIYzHUjkTK95FqYRVKB8DHpVhefWSz/kTw=",
-        "ref": "refs/heads/main",
-        "rev": "549f2762aebeff29a2e5ece7a7dc0f955281a1d1",
-        "revCount": 92,
-        "type": "git",
-        "url": "https://git.lix.systems/lix-project/flake-compat.git"
-      },
-      "original": {
-        "type": "git",
-        "url": "https://git.lix.systems/lix-project/flake-compat.git"
-      }
-    },
-    "flake-parts": {
+    "flake-utils": {
       "inputs": {
-        "nixpkgs-lib": [
-          "nvf",
-          "nixpkgs"
-        ]
+        "systems": "systems"
       },
       "locked": {
-        "lastModified": 1760948891,
-        "narHash": "sha256-TmWcdiUUaWk8J4lpjzu4gCGxWY6/Ok7mOK4fIFfBuU4=",
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "rev": "864599284fc7c0ba6357ed89ed5e2cd5040f0c04",
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
         "type": "github"
       },
       "original": {
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
+        "owner": "numtide",
+        "repo": "flake-utils",
         "type": "github"
       }
     },
@@ -58,21 +39,6 @@
         "type": "github"
       }
     },
-    "mnw": {
-      "locked": {
-        "lastModified": 1758834834,
-        "narHash": "sha256-Y7IvY4F8vajZyp3WGf+KaiIVwondEkMFkt92Cr9NZmg=",
-        "owner": "Gerg-L",
-        "repo": "mnw",
-        "rev": "cfbc7d1cc832e318d0863a5fc91d940a96034001",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Gerg-L",
-        "repo": "mnw",
-        "type": "github"
-      }
-    },
     "nix-flatpak": {
       "locked": {
         "lastModified": 1739444422,
@@ -86,6 +52,28 @@
         "owner": "gmodena",
         "ref": "v0.6.0",
         "repo": "nix-flatpak",
+        "type": "github"
+      }
+    },
+    "nix4nvchad": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "nvchad-starter": "nvchad-starter"
+      },
+      "locked": {
+        "lastModified": 1763648105,
+        "narHash": "sha256-+6bdpAPVU1cI/aybVA/44CgqQCP2XnDU7580iWfBvYc=",
+        "owner": "nix-community",
+        "repo": "nix4nvchad",
+        "rev": "d0475529ad437352c1a7aabf7706bbcad477d1bc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nix4nvchad",
         "type": "github"
       }
     },
@@ -105,41 +93,20 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
+    "nvchad-starter": {
+      "flake": false,
       "locked": {
-        "lastModified": 1761880412,
-        "narHash": "sha256-QoJjGd4NstnyOG4mm4KXF+weBzA2AH/7gn1Pmpfcb0A=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "a7fc11be66bdfb5cdde611ee5ce381c183da8386",
+        "lastModified": 1753939018,
+        "narHash": "sha256-xdLr6tlU9uA+wu0pqha2br0fdVm+1MjgjbB5awz9ICU=",
+        "owner": "NvChad",
+        "repo": "starter",
+        "rev": "e3572e1f5e1c297212c3deeb17b7863139ce663e",
         "type": "github"
       },
       "original": {
-        "owner": "nixos",
-        "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nvf": {
-      "inputs": {
-        "flake-compat": "flake-compat",
-        "flake-parts": "flake-parts",
-        "mnw": "mnw",
-        "nixpkgs": "nixpkgs_2",
-        "systems": "systems"
-      },
-      "locked": {
-        "lastModified": 1762622004,
-        "narHash": "sha256-NpzzgaoMK8aRHnndHWbYNKLcZN0r1y6icCoJvGoBsoE=",
-        "owner": "notashelf",
-        "repo": "nvf",
-        "rev": "09470524a214ed26633ddc2b6ec0c9bf31a8b909",
-        "type": "github"
-      },
-      "original": {
-        "owner": "notashelf",
-        "repo": "nvf",
+        "owner": "NvChad",
+        "ref": "main",
+        "repo": "starter",
         "type": "github"
       }
     },
@@ -147,8 +114,8 @@
       "inputs": {
         "home-manager": "home-manager",
         "nix-flatpak": "nix-flatpak",
-        "nixpkgs": "nixpkgs",
-        "nvf": "nvf"
+        "nix4nvchad": "nix4nvchad",
+        "nixpkgs": "nixpkgs"
       }
     },
     "systems": {
