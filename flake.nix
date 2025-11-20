@@ -74,9 +74,11 @@
       hyprland = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ 
-          ./nvf/nvf.nix
+          nvf.homeManagerModules.default
           ./home/hyprland/home.nix
           ];
+
+          
         extraSpecialArgs = { flakeRoot = flakeRoot; };
     }; 
   };

@@ -1,26 +1,16 @@
- 
- { config, pkgs, lib, ... }:
-# This module is imported into home.nix main file
+{ config, pkgs, lib, ... }:
+
 {
- vim = {
-    theme = {
+  programs.nvf = {
+    enable = true;
+    # your settings need to go into the settings attribute set
+    # most settings are documented in the appendix
+    settings = {
+      vim.viAlias = false;
+      vim.vimAlias = true;
+      vim.lsp = {
         enable = true;
-        name = "gruvbox";
-        style = "dark";
+      };
     };
-    
-    statusline.lualine.enable = true;
-    telescope.enable = true;
-    autocomplete.nvim-cmp.enable = true;
-
-    languages = {
-        enableLSP = true;
-        enableTreesitter = true;
-
-        nix.enable = true;
-        ts.enable = true;
-        rust.enable = true;
-    };
- };
-  
-}  
+  };
+}
