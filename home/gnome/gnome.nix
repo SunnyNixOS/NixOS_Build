@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:  
 # This module is imported into home-manager for jaime-desktop
 let
-  flameshotPath = "${pkgs.flameshot}/bin/flameshot"; # not used in this file(?)
+  flameshotPath = "${pkgs.flameshot}/bin/flameshot";
 in
 {   
   # Installs GNOME Extensions

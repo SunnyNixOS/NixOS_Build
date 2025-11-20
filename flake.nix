@@ -22,6 +22,7 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       flakeRoot = self;
+      de = "gnome"; # change DE here to gnome, kde, hyprland
     in {
 
       
@@ -34,8 +35,11 @@
         nix-flatpak.nixosModules.nix-flatpak
         
         ];
-        # Flake root to help configurations
-        specialArgs = { flakeRoot = flakeRoot; };
+        #Flake root to help config; de to choose Desktop Environment
+        specialArgs = { 
+          flakeRoot = flakeRoot;
+          de = de;
+          };
       };
 
       jaime-nix-gaminglaptop = lib.nixosSystem {
@@ -46,23 +50,32 @@
         nix-flatpak.nixosModules.nix-flatpak  
         ];
 
-        #Flake root to help configs
-        specialArgs = { flakeRoot = flakeRoot; };
+        #Flake root to help config; de to choose Desktop Environment
+        specialArgs = { 
+          flakeRoot = flakeRoot;
+          de = de;
+          };
       };
     };
 
+    # Different home-manager configurations depending on your chosen DE. Just do "home-manager switch --flake .#DE" (replace "DE" with gnome, kde, hyprland)
     homeConfigurations = {
-      jaime-nix-gamingdesktop = home-manager.lib.homeManagerConfiguration {
+      gnome = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home/default_gnome/home_x11.nix ];
+        modules = [ ./home/gnome/home.nix ];
         extraSpecialArgs = { flakeRoot = flakeRoot; };
       };
 
-      jaime-nix = home-manager.lib.homeManagerConfiguration {
+      kde = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home/default_gnome/home_wayland.nix ];
+        modules = [ ./home/kde/home.nix ];
         extraSpecialArgs = { flakeRoot = flakeRoot; };
     };  
+      hyprland = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ./home/hyprland/home.nix ];
+        extraSpecialArgs = { flakeRoot = flakeRoot; };
+    }; 
   };
     };
 }
