@@ -1,6 +1,6 @@
 {
 
-  description = "My first flake!";
+  description = "Sunny's Gaming PC Flake";
   
   inputs = {
     nixpkgs = {
@@ -11,12 +11,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.6.0";
+    nvf.url = "github:notashelf/nvf";
   };
   
   
   
   
-  outputs = { self, nixpkgs, home-manager, nix-flatpak, ... }:
+  outputs = { self, nixpkgs, home-manager, nix-flatpak, nvf, ... }:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -33,7 +34,6 @@
         ./hosts/jaime-nix-gamingdesktop/configuration.nix 
         # Declarative flatpaks
         nix-flatpak.nixosModules.nix-flatpak
-        
         ];
         #Flake root to help config; de to choose Desktop Environment
         specialArgs = { 
@@ -73,7 +73,10 @@
     };  
       hyprland = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home/hyprland/home.nix ];
+        modules = [ 
+          ./nvf/nvf.nix
+          ./home/hyprland/home.nix
+          ];
         extraSpecialArgs = { flakeRoot = flakeRoot; };
     }; 
   };
