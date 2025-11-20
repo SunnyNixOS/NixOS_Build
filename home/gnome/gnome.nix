@@ -76,6 +76,8 @@ in
            show-battery-percentage = true;
            clock-format = "12h";
            color-scheme = "prefer-dark";
+           cursor-theme = "Adwaita";
+           icon-theme = "Adwaita";
   };
       
       # GNOME Extensions Settings
