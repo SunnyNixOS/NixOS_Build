@@ -7,6 +7,11 @@
      }; 
      themeFile = "Catppuccin-Mocha";
    };
+   
+   catppucin.waybar = {
+     enable = true;
+     flavor = mocha;
+   };
 
 
   }
