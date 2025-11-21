@@ -20,7 +20,6 @@
 environment.systemPackages = with pkgs;
   [
     kitty
-    rofi-wayland
     wl-clipboard
     playerctl
     brightnessctl
