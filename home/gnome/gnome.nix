@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:  
 # This module is imported into home-manager for jaime-desktop
 let
-  flameshotPath = "${pkgs.flameshot}/bin/flameshot";
+
 in
 {   
   # Installs GNOME Extensions
@@ -10,7 +10,21 @@ in
      gnomeExtensions.hide-top-bar
      gnomeExtensions.dash2dock-lite
      gnomeExtensions.user-themes
+     
+     # Steam wrapper to launch steam in XWAYLAND mode every time (to help with mouse escaping windows on wayland)
+    (pkgs.steam.overrideAttrs (old: {
+      # Wrap the Steam binary to force XWayland
+      postInstall = ''
+        wrapProgram $out/bin/steam \
+          --prefix STEAM_USE_XWAYLAND : 1
+      '';
+    }))
   ];
+  
+  # Allow unfree packages in home-manager (also in configuration.nix)
+  nixpkgs.config = {
+  allowUnfree = true;
+  };
   
   # Sets system theme to WhiteSur-Dark-solid and to prefer dark mode for GTK applications.
   gtk = {

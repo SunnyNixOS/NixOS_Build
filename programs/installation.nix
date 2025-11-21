@@ -34,6 +34,7 @@
      vulkan-tools
      neovim
      nixd
+     jellyfin-media-player
   ];
   # Enable your installed stuff here
   services.mullvad-vpn.enable = true;
