@@ -28,7 +28,6 @@ environment.systemPackages = with pkgs;
     nwg-displays
     hyprshot
     nautilus
-    swaynotificationcenter
     satty
     yazi
   ];
