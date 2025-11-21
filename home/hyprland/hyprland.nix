@@ -6,7 +6,8 @@ programs.kitty = {
   enable = true;
   settings = {
     confirm_os_window_close = 0;
-  };
+   }; 
+  themeFile = "Catppuccin-Mocha";
 };
 
 wayland.windowManager.hyprland = {
@@ -67,7 +68,6 @@ wayland.windowManager.hyprland = {
     bindl = [
       ", XF86AudioPlay, exec, playerctl play-pause" # the stupid key is called play , but it toggles
     ];
-          # Mouse bindings for moving/resizing windows
-  };
-};
-  }
+       };
+    };
+}

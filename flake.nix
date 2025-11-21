@@ -15,18 +15,19 @@
       url = "github:nix-community/nix4nvchad";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    catppuccin.url = "github:catppuccin/nix/release-25.05";
   };
   
   
   
   
-  outputs = { self, nixpkgs, home-manager, nix-flatpak, nix4nvchad, ... }:
+  outputs = { self, nixpkgs, home-manager, nix-flatpak, nix4nvchad, catppuccin, ... }:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       flakeRoot = self;
-      de = "gnome"; # change DE here to gnome, kde, hyprland
+      de = "hyprland"; # change DE here to gnome, kde, hyprland
     in {
 
       
@@ -65,7 +66,10 @@
     homeConfigurations = {
       gnome = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home/gnome/home.nix ];
+        modules = [ 
+          nix4nvchad.homeManagerModules.nvchad
+          ./home/gnome/home.nix
+          ];
         extraSpecialArgs = { flakeRoot = flakeRoot; };
       };
 
@@ -78,6 +82,7 @@
         inherit pkgs;
         modules = [ 
           nix4nvchad.homeManagerModules.nvchad
+          catppuccin.homeModules.catppuccin
           ./home/hyprland/home.nix
           ];
 

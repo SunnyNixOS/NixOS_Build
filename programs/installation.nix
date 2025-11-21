@@ -35,6 +35,8 @@
      neovim
      nixd
      jellyfin-media-player
+     yazi
+     kitty
   ];
   # Enable your installed stuff here
   services.mullvad-vpn.enable = true;
