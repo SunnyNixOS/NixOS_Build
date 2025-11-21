@@ -8,10 +8,10 @@
      themeFile = "Catppuccin-Mocha";
    };
    
-   catppucin.waybar = {
+    catppuccin.yazi = {
      enable = true;
-     flavor = mocha;
-   };
+     flavor = "mocha";
+    };
 
 
   }

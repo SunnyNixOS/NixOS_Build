@@ -25,7 +25,6 @@ environment.systemPackages = with pkgs;
     playerctl
     brightnessctl
     jq
-    waybar
     nwg-displays
     hyprshot
     nautilus

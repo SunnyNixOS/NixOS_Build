@@ -82,9 +82,9 @@
         inherit pkgs;
         modules = [ 
           nix4nvchad.homeManagerModules.nvchad
-          catppuccin.homeModules.catppuccin
           ./home/hyprland/home.nix
-          ];
+          catppuccin.homeModules.catppuccin
+        ];
 
           
         extraSpecialArgs = { 
