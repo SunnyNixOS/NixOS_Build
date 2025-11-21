@@ -44,6 +44,9 @@ wayland.windowManager.hyprland = {
       "$mainMod, l, movefocus, r"
       ##########################################
 
+      "$mainMod, 1, workspace, 1"
+      "$mainMod, 2, workspace, 2"
+      "$mainMod, 3, workspace, 3"
 
 
     ];
